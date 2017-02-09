@@ -669,7 +669,7 @@ int CalcRotate (objtype *ob)
     // this isn't exactly correct, as it should vary by a trig value,
     // but it is close enough with only eight rotations
 
-    viewangle = player->angle + (centerx - ob->viewx)/8;
+    viewangle = player->angle + (centerx - ob->viewx)/ (8 * viewwidth / 320); 
 
     if (ob->obclass == rocketobj || ob->obclass == hrocketobj)
         angle = (viewangle-180) - ob->angle;
